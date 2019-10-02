@@ -4,48 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Note">
+    tools:context=".ViewNote">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="104dp">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title:" />
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="39dp">
 
         <EditText
-            android:id="@+id/titleText"
-            android:layout_width="match_parent"
+            android:id="@+id/contentTxt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
-
-        <TextView
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Content" />
 
         <EditText
-            android:id="@+id/contentText"
-            android:layout_width="match_parent"
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Title" />
 
         <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="match_parent"
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
-            android:onClick="save"/>
+            android:onClick="back"
+            android:text="Back" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
