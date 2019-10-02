@@ -5,31 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
-    EditText editText;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        editText = (EditText)findViewById(R.id.editText);
+        setContentView(R.layout.activity_main2);
+        textView = (TextView) findViewById(R.id.textView);
     }
 
-    public void privateSaveMethod(View view){
+    public void privateShowMethod(View view){
         Toast.makeText(getApplicationContext(),"Clicked on private",Toast.LENGTH_SHORT).show();
     }
 
-    public void publicSaveMethod(View view){
+    public void publicShowMethod(View view){
         Toast.makeText(getApplicationContext(),"Clicked on public",Toast.LENGTH_SHORT).show();
     }
 
-    public void viewDataMethod(View view){
-        Intent intent = new Intent(this, Main2Activity.class);
+    public void backMethod(View view){
+        Intent intent = new Intent(this, MainActivity.class); // go back
         startActivity(intent);
     }
-
 }
