@@ -21,13 +21,15 @@ public class NotesDB extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db)
+    {
         String CREATE_NOTES_TABLE = "CREATE TABLE "+TABLE_NAME+"("+COL_ID+" INTEGER PRIMARY KEY,"+COL_TITLE+" TEXT,"+COL_CONTENT+" TEXT)";
         db.execSQL(CREATE_NOTES_TABLE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
 
     }
 
@@ -39,6 +41,23 @@ public class NotesDB extends SQLiteOpenHelper {
         values.put(COL_CONTENT, note.getContent());
 
         db.insert(TABLE_NAME, null,values);
+        db.close();
+    }
+
+    public void updateNote(String title, String content, String oldTitle)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_TITLE, title);
+        values.put(COL_CONTENT, content);
+        db.update(TABLE_NAME, values, COL_TITLE + "= ?", new String [] {oldTitle});
+    }
+
+    public void deleteNote(String title)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery("DELETE FROM "+TABLE_NAME+" WHERE "+COL_TITLE+" = ?",new String [] {title});
+        c.moveToFirst();
         db.close();
     }
 

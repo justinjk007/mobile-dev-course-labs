@@ -36,7 +36,15 @@
             android:id="@+id/deleteBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete" />
+            android:text="Delete"
+            android:onClick="delete"/>
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:onClick="update"/>
 
         <Button
             android:id="@+id/back"
@@ -44,6 +52,7 @@
             android:layout_height="wrap_content"
             android:onClick="back"
             android:text="BACK" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

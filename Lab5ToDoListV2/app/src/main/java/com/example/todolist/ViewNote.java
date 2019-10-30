@@ -14,17 +14,20 @@ public class ViewNote extends AppCompatActivity {
     EditText content;
     Button back;
     Intent intent;
+    NotesDB notesDB;
+    String old_title;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_note);
         intent = getIntent();
         title = (EditText) findViewById(R.id.title);
         content = (EditText) findViewById(R.id.content);
         back = (Button) findViewById(R.id.back);
-        String old_title = intent.getStringExtra("title");
+        old_title = intent.getStringExtra("title");
         NoteClass note = new NoteClass();
-        NotesDB notesDB = new NotesDB(this);
+        notesDB = new NotesDB(this);
         note = notesDB.getNote(old_title);
         title.setText(note.getTitle());
         content.setText(note.getContent());
@@ -33,5 +36,19 @@ public class ViewNote extends AppCompatActivity {
     {
         setResult(RESULT_OK,intent);
         finish();
+    }
+
+    public void delete(View v)
+    {
+        notesDB.deleteNote(title.getText().toString());
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void update(View v)
+    {
+        notesDB.updateNote(title.getText().toString(), content.getText().toString(), old_title);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
