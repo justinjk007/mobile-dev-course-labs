@@ -1,0 +1,7 @@
+* Before building the app 
+
+Google maps api key here: [[./app/src/debug/res/values/google_maps_api.xml]]
+
+Openweathermap api key here: [[./app/src/main/java/com/kaipada/lab7mapsandweather/MapsActivity.java::83]]
+
+needs to be updated.
