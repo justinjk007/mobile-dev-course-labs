@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@android:color/holo_red_dark"
     android:layout_height="match_parent">
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:gravity="center"
+      tools:layout_editor_absoluteX="107dp"
+      tools:layout_editor_absoluteY="148dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+	android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/cheetah" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Page"
+        android:text="Cheetah"
         android:layout_gravity="center_horizontal"
         android:textSize="28sp"
         android:textColor="@android:color/black"
@@ -15,5 +38,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView" />
+
+  </LinearLayout>
 
 </RelativeLayout>
