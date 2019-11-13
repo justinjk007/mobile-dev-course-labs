@@ -39,6 +39,13 @@
 	android:onClick="greyScale"
 	android:text="Grey Scale" />
 
+    <Button
+	android:id="@+id/grey"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:onClick="back"
+	android:text="REMOVE GREY SCALE" />
+
   </LinearLayout>
 
 </RelativeLayout>

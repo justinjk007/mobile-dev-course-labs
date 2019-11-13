@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
         imageView.setColorFilter(filter);
     }
 
+    public void back(View view) {
+	imageView.clearColorFilter();
+    }
+
     public void onClick(View v)
     {
 	if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
