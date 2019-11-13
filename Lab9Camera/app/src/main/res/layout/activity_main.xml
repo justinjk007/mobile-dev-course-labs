@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:orientation="vertical" android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:gravity="center"
+      tools:layout_editor_absoluteX="107dp"
+      tools:layout_editor_absoluteY="148dp">
+
+    <ImageView
+	android:id="@+id/result"
+	android:layout_width="match_parent"
+	android:layout_height="300dp"
+	android:gravity="center"
+	android:layout_centerVertical="true"
+	android:layout_centerHorizontal="true"/>
+
+    <Space
+	android:layout_width="match_parent"
+	android:layout_height="60dp" />
+
+    <Button
+	android:id="@+id/cam"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:onClick="onClick"
+	android:text="Camera" />
+
+    <Button
+	android:id="@+id/grey"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:onClick="greyScale"
+	android:text="Grey Scale" />
+
+  </LinearLayout>
+
+</RelativeLayout>
