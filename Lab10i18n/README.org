@@ -1,0 +1,5 @@
+* Testing out Android's default i18n mechanism
+
+This sample have support English, Spanish and French locale. Switch
+the locale in the keyboard settings page of the phones settings and
+the app will automatically change the text.
